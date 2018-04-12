@@ -5,9 +5,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { CategoriesComponent } from './categories/categories.component';
+import { ProductGridComponent } from './product-grid/product-grid.component';
 import { SearchComponent } from './search/search.component';
-import { WorldTypesComponent } from './world-types/world-types.component';
-import { WorldPreviewsComponent } from './world-previews/world-previews.component';
 
 const routes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'categories' },
@@ -15,7 +15,7 @@ const routes: Route[] = [
   { path: 'categories',
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'all' },
-      { path: ':category', component: WorldTypesComponent },
+      { path: ':category', component: CategoriesComponent },
     ]
   }
 ];
@@ -29,9 +29,9 @@ const routes: Route[] = [
     MatTabsModule
   ],
   declarations: [
-    SearchComponent,
-    WorldTypesComponent,
-    WorldPreviewsComponent
+    CategoriesComponent,
+    ProductGridComponent,
+    SearchComponent
   ]
 })
 export class HomeModule {}

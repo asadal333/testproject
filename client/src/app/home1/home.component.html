@@ -1,0 +1,11 @@
+<mat-tab-group (selectedIndexChange)="onTabChange($event)">
+  <mat-tab *ngFor="let t of worldTypes" [label]="t | uppercase"></mat-tab>
+</mat-tab-group>
+
+<div class="grid-list-container">
+  <mat-grid-list cols="3" gutterSize="16">
+    <mat-grid-tile *ngFor="let w of worlds$ | async">
+      <tproj-world-preview [world]="w"></tproj-world-preview>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

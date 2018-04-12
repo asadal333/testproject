@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {FormsModule} from "@angular/forms";
 
 import { ProductComponent } from './product.component';
 import { ProductDetailComponent } from './product-detail';
@@ -12,6 +13,7 @@ import { ProductSuggestionComponent } from './product-suggestion';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
     RouterModule.forChild([
       { path: '', component: ProductComponent }

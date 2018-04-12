@@ -23,6 +23,8 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   private readonly productChange$ = new Subject<Product>();
   latestBids$: Observable<number>;
   @Input() product: Product;
+  msg = "";
+  msgBoard = "empty Msg board";
 
   constructor(
     @Inject(API_BASE_URL) private readonly baseUrl: string,

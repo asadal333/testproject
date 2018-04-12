@@ -2,15 +2,19 @@
   <mat-sidenav #sidenav>
     <nga-search-form (search)="sidenav.close()"></nga-search-form>
   </mat-sidenav>
-
+  <!-- <mat-toolbar>
+    <span class="fill"></span>
+    <img class="logo" src="assets/logo.svg" alt="NgShop Logo">
+    <span class="fill"></span>
+  </mat-toolbar> -->
   <mat-toolbar class="toolbar">
     <button mat-icon-button id="search"
             class="toolbar__icon-button"
             (click)="sidenav.toggle()">
       <mat-icon>search</mat-icon>
     </button>
-
-    <div class="toolbar__logo-title-group"
+    <!-- <span class="fill"></span> -->
+    <div class="toolbar__logo-title-group" 
          fxLayout
          fxLayoutAlign="center center">
       <a routerLink="/"
@@ -19,12 +23,12 @@
              src="/assets/logo.svg"
              alt="NgAuction Logo">
       </a>
-      <a class="toolbar__title"
-         routerLink="/">NgAuction</a>
+      <a class="toolbar__title" color="primary"
+         routerLink="/">Test Project</a>
     </div>
 
     <div fxFlex></div>
-
+    <!-- <span class="fill"></span> -->
     <button mat-icon-button
             class="toolbar__icon-button
                    toolbar__shopping-cart-button">

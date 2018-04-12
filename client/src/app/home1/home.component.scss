@@ -1,0 +1,13 @@
+@import '../../styles/palette';
+:host {
+    display: block;
+    background: whitesmoke;
+  }
+  
+  .grid-list-container {
+    padding: 16px;
+  }
+
+  mat-tab-group {
+    background: mat-color($nga-background, card);
+  }

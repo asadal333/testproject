@@ -4,19 +4,22 @@ import { Observable } from 'rxjs/Observable';
 import { map, switchMap } from 'rxjs/operators';
 
 import { Product, ProductService } from '../../shared/services';
+//import { World, WorldService } from '../../shared/services';
 
 @Component({
-  selector: 'nga-categories',
-  styleUrls: [ './categories.component.scss' ],
-  templateUrl: './categories.component.html',
+  selector: 'tproj-world-types',
+  styleUrls: [ './world-types.component.scss' ],
+  templateUrl: './world-types.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CategoriesComponent {
+export class WorldTypesComponent {
   readonly categories$: Observable<string[]>;
   readonly products$: Observable<Product[]>;
+  //readonly worlds$: Observable<World[]>;
 
   constructor(
     private productService: ProductService,
+    //private worldService: WorldService,
     private route: ActivatedRoute
   ) {
     this.categories$ = this.productService.getAllCategories().pipe(

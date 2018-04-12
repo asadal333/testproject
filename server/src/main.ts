@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import { createServer } from 'http';
 import { createBidServer } from './ws-auction';
-import { router } from './rest-auction';
+import { router } from './rest-api';
 
 const app = express();
 app.use('/api', router);

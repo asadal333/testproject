@@ -16,6 +16,8 @@
     <div class="info">
       <h1 class="info__title">{{ product?.title }}</h1>
       <div class="info__description">{{ product?.description }}</div>
+      <div > {{msg}} </div>
+      <div> {{ msgBoard }}</div>
       <div class="info__bid">
         <span>
           <span class="info__bid-value"
@@ -25,7 +27,8 @@
         </span>
         <span class="info__bid-label">LAST BID</span>
       </div>
-
+        <input type='text' placeholder= "Enter shipping address"
+        [(ngModel)] = "msg"/>
       <button class="info__bid-button"
               mat-raised-button
               color="accent"

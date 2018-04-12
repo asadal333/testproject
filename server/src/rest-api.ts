@@ -7,6 +7,13 @@ import {
   getProductsByCategory
 } from './db-auction';
 
+import {
+  getDistinctWorldTypes,
+  getWorlds,
+  getWorldById,
+  getWorldsByType
+} from './db-worlds';
+
 export const router = express.Router();
 
 router.use(cors());
@@ -26,4 +33,22 @@ router.get('/categories', async (_, res: express.Response) => {
 
 router.get('/categories/:category', async (req: express.Request, res: express.Response) => {
   res.json(await getProductsByCategory(req.params.category));
+});
+
+/////////////worlds/////////////////
+router.get('/worlds', async (req: express.Request, res: express.Response) => {
+  res.json(await getWorlds(req.query));
+});
+
+router.get('/worlds/:worldId', async (req: express.Request, res: express.Response) => {
+  const worldId = parseInt(req.params.worldId, 10) || -1;
+  res.json(await getWorldById(worldId));
+});
+
+router.get('/worldTypes', async (_, res: express.Response) => {
+  res.json(await getDistinctWorldTypes());
+});
+
+router.get('/worldTypes/:type', async (req: express.Request, res: express.Response) => {
+  res.json(await getWorldsByType(req.params.type));
 });

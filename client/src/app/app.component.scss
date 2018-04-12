@@ -4,7 +4,20 @@
   display: block;
   height: 100%;
 }
+mat-toolbar {
+  background: mat-color($nga-background, card);
+  // Add the shadow border at the bottom of the toolbar.
+  box-shadow: 0 1px mat-color($nga-foreground, divider);
+}
 
+// .fill {
+//   flex: 1 1 auto;
+// }
+
+// .logo {
+//   height: 36px;
+//   width: auto;
+// }
 mat-sidenav-container {
   height: 100%;
 }
@@ -36,6 +49,6 @@ mat-sidenav-container {
   color: mat-color($nga-foreground, icon);
 }
 
-.toolbar__shopping-cart-button {
-  margin-right: 8px;
-}
+// .toolbar__shopping-cart-button {
+//   margin-right: 8px;
+// }
