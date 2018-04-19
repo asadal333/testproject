@@ -17,7 +17,7 @@
       <h1 class="info__title">{{ product?.title }}</h1>
       <div class="info__description">{{ product?.description }}</div>
       <div > {{msg}} </div>
-      <div> {{ msgBoard }}</div>
+      <div> {{ latestComment$ | async }}</div>
       <div class="info__bid">
         <span>
           <span class="info__bid-value"

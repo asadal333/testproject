@@ -6,6 +6,7 @@ import { WS_URL } from '../../app.tokens';
 export interface BidMessage {
   productId: number;
   price: number;
+  msg: string;
 }
 
 @Injectable()
@@ -25,7 +26,7 @@ export class BidService {
 
   constructor(@Inject(WS_URL) private readonly wsUrl: string) {}
 
-  placeBid(productId: number, price: number): void {
-    this.wsSubject.next(JSON.stringify({ productId, price }));
+  placeBid(productId: number, price: number, msg: string): void {
+    this.wsSubject.next(JSON.stringify({ productId, price, msg }));
   }
 }

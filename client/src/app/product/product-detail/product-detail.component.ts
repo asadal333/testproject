@@ -24,8 +24,10 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   latestBids$: Observable<number>;
   @Input() product: Product;
   msg = "";
-  msgBoard = "empty Msg board";
-
+  //console.log(this.product);
+  latestComment$: Observable<string>;
+  msgBoard = "no messages";
+  //msgBoard = "test empty board";
   constructor(
     @Inject(API_BASE_URL) private readonly baseUrl: string,
     private readonly bidService: BidService) {}
@@ -36,6 +38,12 @@ export class ProductDetailComponent implements OnInit, OnChanges {
       this.bidService.priceUpdates$.pipe(startWith<BidMessage|null>(null)),
       (product, bid) =>  bid && bid.productId === product.id ? bid.price : product.price
     );
+    this.latestComment$ = combineLatest(
+      this.productChange$.pipe(startWith(this.product)),
+      this.bidService.priceUpdates$.pipe(startWith<BidMessage|null>(null)),
+      (product, bid) =>  bid && bid.productId === product.id ? bid.msg : product.msg
+    );
+    //this.msgBoard = this.product.msg ? this.product.msg : "no messages";
   }
 
   ngOnChanges({ product }: { product: SimpleChange }) {
@@ -43,7 +51,7 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   }
 
   placeBid(price: number) {
-    this.bidService.placeBid(this.product.id, price);
+    this.bidService.placeBid(this.product.id, price, this.msg);
   }
 
   urlFor(product: Product): string {

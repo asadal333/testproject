@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "userId" : 3,
+    "msg" : "test msg 1"
+  },
+  {
+    "id": 2,
+    "userId" : 5,
+    "msg" : "hey"
+  },
+  {
+    "id": 3,
+    "userId" : 2,
+    "msg" : "hallo"
+  },
+  {
+    "id": 4,
+    "userId" : 2,
+    "msg" : "oh noooo"
+  }
+]

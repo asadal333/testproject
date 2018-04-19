@@ -11,6 +11,7 @@ export interface Product {
   imageUrl: string;
   description: string;
   categories: string[];
+  msg: string;
 }
 
 export interface ProductSearchParams {
